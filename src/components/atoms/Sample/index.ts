@@ -1,4 +1,3 @@
 import Sample from './Sample'
 
-  export default Sample
-  
+export default Sample
