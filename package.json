@@ -34,7 +34,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "CI=true craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -44,7 +44,8 @@
     "format:fix": "npm run prettier -- --write",
     "type:check": "tsc",
     "lint": "eslint --ext .ts --ext .tsx .",
-    "validate": "npm-run-all --parallel type:check format:check lint",
+    "test:staged": "craco test --watchAll=false --changedSince=main  --coverage",
+    "validate": "npm-run-all --parallel type:check format:check lint test:staged build",
     "prepare": "husky install"
   },
   "eslintConfig": {
