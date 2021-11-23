@@ -1,7 +1,3 @@
 module.exports = {
-  '*.{ts,tsx}': (filenames) => [
-    'npm run format:fix',
-    'npm run validate',
-    'npm run test:staged',
-  ],
+  '*.{ts,tsx}': (filenames) => ['npm run format:fix', 'npm run validate'],
 }

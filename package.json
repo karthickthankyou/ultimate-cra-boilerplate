@@ -45,7 +45,7 @@
     "type:check": "tsc",
     "lint": "eslint --ext .ts --ext .tsx .",
     "test:staged": "craco test --watchAll=false --changedSince=main  --coverage",
-    "validate": "npm-run-all --parallel type:check format:check lint  build",
+    "validate": "npm-run-all --parallel type:check format:check lint test build",
     "prepare": "husky install",
     "preanalyze": "npm run build",
     "analyze": "npx source-map-explorer 'build/static/js/*.js'",
