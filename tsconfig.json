@@ -16,7 +16,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "noImplicitAny": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["cypress", "@testing-library/cypress"]
   },
   "include": ["src"]
 }
