@@ -14,8 +14,8 @@ function App() {
   const [incrementAmount, setIncrementAmount] = useState('2')
 
   const incrementValue = Number(incrementAmount) || 0
-  const obj = { msg: 'Objects are not valid as a React child' }
-  const [text, textSetter] = useState<string>(JSON.stringify(obj))
+  // const obj = { msg: 'Objects are not valid as a React child' }
+  // const [text, textSetter] = useState<string>(JSON.stringify(obj))
 
   return (
     <div className='py-12 bg-gray-50'>
