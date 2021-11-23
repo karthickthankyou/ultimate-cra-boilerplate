@@ -15,6 +15,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: git fetch --no-tags --depth=1 origin main
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
         with:

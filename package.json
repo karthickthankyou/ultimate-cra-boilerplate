@@ -44,7 +44,7 @@
     "format:fix": "npm run prettier -- --write",
     "type:check": "tsc",
     "lint": "eslint --ext .ts --ext .tsx .",
-    "test:staged": "craco test --watchAll=false --changedSince=main  --coverage",
+    "test:staged": "craco test --watchAll=false --changedSince=origin/main  --coverage",
     "validate": "npm-run-all --parallel type:check format:check lint test:staged build",
     "prepare": "husky install"
   },
