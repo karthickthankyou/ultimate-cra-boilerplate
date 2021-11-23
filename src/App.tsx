@@ -20,7 +20,7 @@ function App() {
   return (
     <div className='py-12 bg-gray-50'>
       <div className='max-w-md mx-auto'>
-        <h1 className='text-3xl font-semibold'>CRA Boilerplate</h1>
+        <h1 className='text-3xl font-semibold'>Ultimate CRA Boilerplate</h1>
         <div className='mt-4 text-gray-700'>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum,
           laboriosam autem ipsam perferendis unde accusamus quis libero
