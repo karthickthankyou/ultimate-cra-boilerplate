@@ -45,24 +45,14 @@
     "type:check": "tsc",
     "lint": "eslint --ext .ts --ext .tsx .",
     "test:staged": "craco test --watchAll=false --changedSince=main  --coverage",
-    "validate": "npm-run-all --parallel type:check format:check lint  build",
-    "prepare": "husky install"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
+    "validate": "npm-run-all --parallel type:check format:check lint test build",
+    "prepare": "husky install",
+    "preanalyze": "npm run build",
+    "analyze": "npx source-map-explorer 'build/static/js/*.js'",
+    "depcheck": "npx depcruise --config .dependency-cruiser.js src",
+    "depcheck:graph": "npx depcruise --include-only '^src' --output-type dot src | dot -T svg > dependencygraph.svg",
+    "cloc": "npx cloc src",
+    "chromatic": "npx chromatic --project-token=e7d1b1895737"
   },
   "browserslist": {
     "production": [
@@ -89,6 +79,7 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "autoprefixer": "^9.8.8",
+    "dependency-cruiser": "^10.7.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
