@@ -12,6 +12,7 @@
     "@types/node": "^12.20.37",
     "@types/react": "^16.14.21",
     "@types/react-dom": "^16.9.14",
+    "firebase": "^9.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
@@ -44,15 +45,14 @@
     "format:fix": "npm run prettier -- --write",
     "type:check": "tsc",
     "lint": "eslint --ext .ts --ext .tsx .",
-    "test:staged": "craco test --watchAll=false --changedSince=main  --coverage",
-    "validate": "npm-run-all --parallel type:check format:check lint test build",
+    "test:staged": "craco test --watchAll=false",
+    "validate": "npm-run-all --parallel type:check format:check lint test:staged build",
     "prepare": "husky install",
     "preanalyze": "npm run build",
     "analyze": "npx source-map-explorer 'build/static/js/*.js'",
     "depcheck": "npx depcruise --config .dependency-cruiser.js src",
     "depcheck:graph": "npx depcruise --include-only '^src' --output-type dot src | dot -T svg > dependencygraph.svg",
-    "cloc": "npx cloc src",
-    "chromatic": "npx chromatic --project-token=e7d1b1895737"
+    "cloc": "npx cloc src"
   },
   "browserslist": {
     "production": [
