@@ -4,7 +4,12 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'standard', 'prettier'],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:cypress/recommended',
+    'standard',
+    'prettier',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -20,10 +25,19 @@ module.exports = {
     'no-unused-vars': 'warn',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 'error',
+    'cypress/no-unnecessary-waiting': 'warn',
   },
   settings: {
     react: {
       version: 'latest',
     },
   },
+  overrides: [
+    {
+      files: ['*.test.js', '*.spec.js'],
+      rules: {
+        'no-unused-expressions': 'off',
+      },
+    },
+  ],
 }
