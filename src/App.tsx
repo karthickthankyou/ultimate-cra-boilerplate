@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from './store'
 import {
   decrement,
@@ -7,15 +7,21 @@ import {
   incrementAsync,
   selectCount,
 } from './store/counter'
+import { signin, useUserListener } from './store/user'
 
 function App() {
   const count = useAppSelector(selectCount)
+  useUserListener()
   const dispatch = useAppDispatch()
   const [incrementAmount, setIncrementAmount] = useState('2')
 
   const incrementValue = Number(incrementAmount) || 0
   // const obj = { msg: 'Objects are not valid as a React child' }
   // const [text, textSetter] = useState<string>(JSON.stringify(obj))
+
+  useEffect(() => {
+    dispatch(signin({ email: 'test@test.com', password: 'testTest' }))
+  }, [])
 
   return (
     <div className='py-12 bg-gray-50'>
