@@ -16,8 +16,8 @@ function App() {
   const [incrementAmount, setIncrementAmount] = useState('2')
 
   const incrementValue = Number(incrementAmount) || 0
-  // const obj = { msg: 'Objects are not valid as a React child' }
-  // const [text, textSetter] = useState<string>(JSON.stringify(obj))
+  const obj = { msg: 'Objects are not valid as a React child' }
+  const [text, setText] = useState<string>(JSON.stringify(obj))
 
   useEffect(() => {
     dispatch(signin({ email: 'test@test.com', password: 'testTest' }))
@@ -27,6 +27,10 @@ function App() {
     <div className='py-12 bg-gray-50'>
       <div className='max-w-md mx-auto'>
         <h1 className='text-3xl font-semibold'>Ultimate CRA Boilerplate</h1>
+
+        {text}
+        {/** @ts-ignore */}
+        <button onClick={() => setText(obj)}>Break the world</button>
         <div className='mt-4 text-gray-700'>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum,
           laboriosam autem ipsam perferendis unde accusamus quis libero
@@ -39,7 +43,6 @@ function App() {
           doloremque in, accusamus quis libero temporibus magni? Beatae culpa
           sint aliquid asperiores.
         </div>
-
         <div className='mt-4 text-gray-700'>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
         </div>
