@@ -51,23 +51,8 @@
     "analyze": "npx source-map-explorer 'build/static/js/*.js'",
     "depcheck": "npx depcruise --config .dependency-cruiser.js src",
     "depcheck:graph": "npx depcruise --include-only '^src' --output-type dot src | dot -T svg > dependencygraph.svg",
-    "cloc": "npx cloc src"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
+    "cloc": "npx cloc src",
+    "chromatic": "npx chromatic --project-token=e7d1b1895737"
   },
   "browserslist": {
     "production": [
